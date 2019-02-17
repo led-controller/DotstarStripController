@@ -1,7 +1,12 @@
 {
   "name": "dotstarstripcontroller",
-  "version": "0.1.0",
+  "author": "Lukas Sturm",
+  "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/led-controller/DotstarStripController.git"
+  },
   "main": "dist/DotstarStripController.js",
   "types": "dist/DotstarStripController.d.ts",
   "scripts": {
