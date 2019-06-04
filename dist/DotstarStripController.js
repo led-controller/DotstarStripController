@@ -23,6 +23,7 @@ class DotstarStripController {
         }
         this.spi = SPI.initialize(params["spi"]);
         this.dotstar = new DOT.Dotstar(this.spi, { length: params["ledcount"] });
+        console.log('SPI path: %s', params["spi"]);
     }
     /**
      * Sets the whole strip
@@ -67,8 +68,8 @@ class DotstarStripController {
     /**
      * Shuts down all Strip-Controller relevant connections like spi
      */
-    shutdown() {
-        this.spi.close();
+    shutdown(callback) {
+        this.spi.close(callback);
     }
     /**
      * Returns the length of the LED-Strip

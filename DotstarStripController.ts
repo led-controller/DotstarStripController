@@ -79,8 +79,8 @@ export default class DotstarStripController implements IStripController {
   /**
    * Shuts down all Strip-Controller relevant connections like spi
    */
-  shutdown(): void {
-    this.spi.close();
+  shutdown(callback: Function): void {
+    this.spi.close(callback);
   }
   /**
    * Returns the length of the LED-Strip

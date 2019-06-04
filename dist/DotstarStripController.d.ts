@@ -44,7 +44,7 @@ export default class DotstarStripController implements IStripController {
     /**
      * Shuts down all Strip-Controller relevant connections like spi
      */
-    shutdown(): void;
+    shutdown(callback: Function): void;
     /**
      * Returns the length of the LED-Strip
      * @returns {number} Length of LED-Strip
