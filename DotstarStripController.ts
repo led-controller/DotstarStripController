@@ -20,12 +20,7 @@ export default class DotstarStripController implements IStripController {
   constructor(params: Array<string>) {
 
     if (!params["spi"]) {
-      const err : Error = new Error('"spi" not set as a parameter!')
-      err["type"] = "parameter";
-      throw err;
-    }
-    if (!params["ledcount"]) {
-      const err : Error = new Error('"ledcount" not set as a parameter!')
+      const err : Error = new Error(`When using DotstarStripController you need to specify a "spi" parameter pointing to the SPI-Device and Bus you want to use`);
       err["type"] = "parameter";
       throw err;
     }
@@ -33,7 +28,7 @@ export default class DotstarStripController implements IStripController {
     this.spi = SPI.initialize(params["spi"]);
     this.dotstar = new DOT.Dotstar(this.spi, {length: params["ledcount"]});
 
-    console.log('SPI path: %s', params["spi"]);
+    console.log('DotstarStripController initialized at: %s', params["spi"]);
   }
 
   /**
